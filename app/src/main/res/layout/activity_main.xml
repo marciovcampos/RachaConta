@@ -57,7 +57,7 @@
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:hint="Valor Total das Bebidas Acoólicas"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -73,7 +73,7 @@
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:hint="Valor Total das Bebidas Não Acoólicas"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -89,26 +89,47 @@
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:hint="Valor Total da Comida"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
         </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textPorcetagemGarcomId"
+            android:layout_below="@+id/edtLabelValorTotalComidaId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Porcentagem do Garçom:"
+            android:layout_margin="8dp"
+            />
+
+        <TextView
+            android:id="@+id/textPorcetagemAtualSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textPorcetagemGarcomId"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:text="10%"/>
 
         <SeekBar
             android:id="@+id/seekBarPorcetagemGarcomId"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edtLabelValorTotalComidaId"
+            android:layout_below="@+id/textPorcetagemAtualSeekBar"
             android:layout_margin="5dp"
-            android:layout_marginTop="40dp"
+            android:paddingTop="0dp"
             android:max="10"
-            android:progress="1" />
+            android:progress="1"
+            android:thumb="@drawable/seekbar_thumb"
+            android:splitTrack="false"
+            android:progressDrawable="@drawable/custom_progress"/>
 
         <Button
             android:id="@+id/btnCalculaConta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/seekBarPorcetagemGarcomId"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/colorPrimary"
             android:text="CALCULAR TOTAL A PAGAR"
             android:textColor="@color/colorWhite"
@@ -119,7 +140,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/line"
-            android:layout_below="@id/btnCalculaConta"/>
+            android:layout_below="@id/btnCalculaConta"
+            />
+
+        <TextView
+            android:id="@+id/textlinhaDivisoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linhaDivisoria"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:text="RESULTADO"/>
 
         <TextView
             android:id="@+id/txtResultadoId"
